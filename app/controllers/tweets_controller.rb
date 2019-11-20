@@ -33,9 +33,13 @@ class TweetsController < ApplicationController
     end
 
     def is_owner
-        if current_user.id == Tweet.find(params[:id]).user_id
-            return true
-        else
+        if user_signed_in?
+            if current_user.id == Tweet.find(params[:id]).user_id
+                return true
+            else
+                redirect_to tweets_path
+            end
+         else
             redirect_to tweets_path
         end
     end
