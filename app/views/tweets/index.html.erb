@@ -1,0 +1,15 @@
+<h1> Index Tweets</h1>
+
+<% @tweets.each do |tweet| %>
+
+<p> <%= tweet.body %> by <%= tweet.user.email %></p>
+<%= link_to  "Delete", tweet_path(tweet) ,method: :delete%>
+<hr/>
+<%end%>
+
+<%= link_to  "Sing Up", new_user_registration_path %>
+<%= link_to  "Sing In", new_user_session_path %>
+<%= link_to  "Sign Out", destroy_user_session_path, method: :delete %>
+
+<%= link_to  "You Acount", edit_user_registration_path %>
+<%= link_to  "New Tweet", new_tweet_path %>
