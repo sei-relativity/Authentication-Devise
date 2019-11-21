@@ -1,6 +1,6 @@
 # README
 
-After fork and clone you have to run `bundle install` before starting the server.
+After fork and clone you have to run `bundle install` then `rails db:create` before starting the server.
 
 Steps to setup Devise:
 Paste this in your Gimfile 
